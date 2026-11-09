@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Market Ticker",
+  "version": "1.0.0",
+  "description": "One toolbar badge that rotates through Bitcoin fees and price, Ethereum gas, gold, silver and Monero prices. Click for the full dashboard; pin any metric to lock the badge.",
+  "minimum_chrome_version": "120",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Market Ticker",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "alarms", "idle"],
+  "host_permissions": [
+    "https://blockstream.info/*",
+    "https://ethereum-rpc.publicnode.com/*",
+    "https://eth.llamarpc.com/*",
+    "https://rpc.ankr.com/eth/*",
+    "https://api.gold-api.com/*",
+    "https://api.coingecko.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

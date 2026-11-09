@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Market Ticker</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      width: 330px;
+      margin: 0;
+      padding: 12px;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      background: #1e1f22;
+      color: #e3e5e8;
+    }
+    header { display: flex; align-items: center; gap: 8px; }
+    #curIcon { width: 20px; height: 20px; }
+    #curName { font-weight: 600; flex: 1; }
+    button {
+      background: #2f3136;
+      color: #e3e5e8;
+      border: 1px solid #4a4d55;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    button:hover { background: #3c3f45; }
+    button:disabled { opacity: 0.45; cursor: default; }
+    #curValue { font-size: 22px; font-weight: 700; margin: 4px 0 2px; font-variant-numeric: tabular-nums; }
+    #curMeta { color: #9a9fa6; font-size: 11px; margin-bottom: 10px; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 8px;
+      margin: 2px 0;
+      border-radius: 6px;
+      background: #26282c;
+      border-left: 3px solid #555;
+    }
+    li.active { background: #2e3238; }
+    li img { width: 16px; height: 16px; }
+    .m-name { flex: 1; white-space: nowrap; }
+    .m-value { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .m-value.refreshing { opacity: 0.5; }
+    .m-age { color: #9a9fa6; font-size: 11px; min-width: 60px; text-align: right; }
+    li button { padding: 2px 7px; font-size: 11px; }
+    footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+    #mode { color: #9a9fa6; font-size: 11px; }
+    .err { color: #ef5350; }
+  </style>
+</head>
+<body>
+  <header>
+    <img id="curIcon" alt="">
+    <span id="curName">—</span>
+    <button id="nextBtn" title="Show the next metric on the badge">Next ›</button>
+  </header>
+  <div id="curValue">…</div>
+  <div id="curMeta">loading…</div>
+  <ul id="rows"></ul>
+  <footer>
+    <span id="mode">badge rotates every 30 s</span>
+    <button id="refreshAllBtn">Refresh all</button>
+  </footer>
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

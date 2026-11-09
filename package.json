@@ -1,0 +1,31 @@
+{
+  "name": "chrome-extension-release-tools",
+  "version": "1.0.0",
+  "description": "Release tools for Chrome extensions",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --config ../release/config/eslint.config.mjs .",
+    "pack": "node ../release/scripts/pack.mjs .",
+    "publish": "bash ../release/scripts/tag_release.sh ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camalolo/Ticker-extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camalolo/Ticker-extension/issues"
+  },
+  "homepage": "https://github.com/camalolo/Ticker-extension#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "baseline-browser-mapping": "^2.9.11",
+    "eslint": "^9.36.0",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "globals": "^16.4.0",
+    "web-ext": "^9.2.0",
+    "webext-buildtools-chrome-crx-builder": "^1.0.18"
+  }
+}
